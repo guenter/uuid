@@ -60,7 +60,7 @@ require 'digest/sha1'
 class UUID
 
   # Version number.
-  module Version
+  module VersionSpec
     version = Gem::Specification.load(File.expand_path("../uuid.gemspec", File.dirname(__FILE__))).version.to_s.split(".").map { |i| i.to_i }
     MAJOR = version[0]
     MINOR = version[1]
@@ -68,7 +68,7 @@ class UUID
     STRING = "#{MAJOR}.#{MINOR}.#{PATCH}"
   end
 
-  VERSION = Version::STRING
+  VERSION = VersionSpec::STRING
 
   ##
   # Clock multiplier. Converts Time (resolution: seconds) to UUID clock
